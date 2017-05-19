@@ -16,8 +16,8 @@ BEGIN{
 {
 	print "<object>"
 		print "<bndbox>"
-			print "<xmin>"$1"</xmin>"
-			print "<ymin>"$2"</ymin>"
+			print "<xmin>"$2"</xmin>"
+			print "<ymin>"$1"</ymin>"
 			print "<ymax>"$3+$1"</ymax>"
 			print "<xmax>"$4+$2"</xmax>"
 		print "</bndbox>"
