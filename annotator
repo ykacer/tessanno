@@ -1,0 +1,42 @@
+#! /usr/bin/awk -f
+
+BEGIN{
+	print "<?xml version="1.0" ?>"
+	print "<annotation>"
+	print "<segmented>0</segmented>"
+	print "<filename>"f".tif</filename>"
+	print "<source>"
+	print "<image>flickr</image>"
+	print "<annotation>annotation</annotation>"
+	print "<flickrid>0</flickrid>"
+	print "<database>"d"</database>"
+	print "</source>"
+}
+
+{
+	print "<object>"
+		print "<bndbox>"
+			print "<xmin>"$1"</xmin>"
+			print "<ymin>"$2"</ymin>"
+			print "<ymax>"$3+$1"</ymax>"
+			print "<xmax>"$4+$2"</xmax>"
+		print "</bndbox>"
+		print "<difficult>0</difficult>"
+		print "<pose>unknown</pose>"
+		print "<name>text</name>"
+		print "<truncated>0</truncated>"
+	print "</object>"
+}
+
+END{
+	print "<owner>"
+	print "<name>"o"</name>"
+	print "<flickrd>?</flickrid>"
+	print "</owner>"
+	print "<folder>"fo"</folder>"
+	print "<size>"
+	print "<width>"w"</width>"
+	print "<height>"h"</height>"
+	print "<depth>3</depth>"
+	print "</size>"
+}
